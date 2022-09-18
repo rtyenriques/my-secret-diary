@@ -1,0 +1,80 @@
+
+  <body>
+
+    <div class="container" id="homepageContainer">
+
+    <h1>Secret Diary</h1>
+
+    <p><strong>Store your thoughts permanently and securely</strong></p>
+
+    <div id="error"><?=$error;?></div>
+    <div id="success"><?=$success;?></div>
+    
+    
+    <form method="post" id="signUpForm">
+        <p>Interested, sign up now!</p>
+        <div class="mb-3">
+        <!-- <label for="email" class="form-label">Email address</label> -->
+        <input type="text" class="form-control" name="email" placeholder="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+        <!-- <label for="password" class="form-label">Password</label> -->
+        <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+        <div class="mb-3" form-check>
+        <label for="stayloggedin"><small>Stay Logged In</small></label>
+        <input type="checkbox" name="stayloggedin" value="1">
+        </div>
+        <input type="hidden" name="signup" value="1">
+        <input type="submit" name="submit" class="btn btn-primary" value="Signup">
+        <a id="showLoginForm"  class="toggleForm">Already have an account</a>
+    </form>
+    <!-- <a id="showLoginForm" class="btn btn-primary">Already have an account</a> -->
+    
+    <form method="post" id="loginForm">
+        <p>Login using your email and password</p>
+        <div class="mb-3">
+        <!-- <label for="email" class="form-label">Email address</label> -->
+        <input type="text" class="form-control" name="email" placeholder="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+        <!-- <label for="password" class="form-label">Password</label> -->
+        <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+        <div class="mb-3" form-check>
+        <label for="stayloggedin"><small>Stay Logged In</small></label>
+        <input type="checkbox" name="stayloggedin" value="1">
+        </div>
+        <input type="hidden" name="signup" value="0">
+        <input type="submit" name="submit" class="btn btn-primary" value="Login">
+        <a id="showSignUpForm" class="toggleForm" >Don't have an account</a>
+    </form>
+    <!-- <a id="showSignUpForm" class="btn btn-primary" >Don't have an account</a> -->
+
+    </div>
+
+    <script type="text/javascript">
+    $("#showLoginForm").click(function() {
+        $("#signUpForm").toggle();
+        $("#showLoginForm").toggle();
+        $("#loginForm").toggle();
+        $("#showSignUpForm").toggle();
+    })
+
+    $("#showSignUpForm").click(function() {
+        $("#signUpForm").toggle();
+        $("#showLoginForm").toggle();
+        $("#loginForm").toggle();
+        $("#showSignUpForm").toggle();
+    })
+    </script>
+
+
+
+
+
+
+
+
